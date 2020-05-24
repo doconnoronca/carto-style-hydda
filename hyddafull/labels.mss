@@ -258,7 +258,6 @@
 // ==================================================================
 // AREA LABELS
 // ==================================================================
-
 #area_label[type='golf_course'][zoom>=10],
 #area_label[type='park'][zoom>=10] {
   text-name: "''";
@@ -465,11 +464,11 @@
     text-wrap-width: 180;
   }
 }
-   
-#poi[type='university'][zoom>=15],
-#poi[type='hospital'][zoom>=16],
-#poi[type='school'][zoom>=17],
-#poi[type='library'][zoom>=17] {
+
+#area_label[type='university'][zoom>=15],
+#area_label[type='hospital'][zoom>=16],
+#area_label[type='school'][zoom>=17],
+#area_label[type='library'][zoom>=17] {
   text-name:"[name]";
   text-face-name:@sans;
   text-size:10;
@@ -477,8 +476,98 @@
   text-fill: @poi_text;
 }
 
+@shop-icon: #909090;
 
+#amen[type='ferry'][zoom>=16]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/ferry.svg');
+}
 
+#amen[type='cinema'][zoom>=16]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/cinema.svg');
+}
+
+#amen[type='theatre'][zoom>=16]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/theatre.svg');
+}
+
+#amen[type='library'][zoom>=16]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/library.svg');
+}
+
+#amen[type='food_court'][zoom>=16],
+#amen[type='restaurant'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/restaurant.svg');
+}
+
+#amen[type='cafe'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/cafe.svg');
+}
+
+#amen[type='fast_food'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/fast_food.svg');
+}
+
+#amen[type='greengrocer'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/shop/greengrocer.svg');
+}
+
+#amen[type='grocery'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/shop/supermarket.svg');
+}
+
+#amen[type='supermarket'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/shop/supermarket.svg');
+}
+
+#amen[type='convenience'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/shop/convenience.svg');
+}
+
+#amen[type='shelter'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/shelter.svg');
+}
+
+#amen[type='bicycle_rental'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/rental_bicycle.svg');
+}
+
+#amen[type='toilets'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/toilets.svg');
+}
+
+#amen[type='atm'][zoom>=17]{
+    marker-clip: false;
+    marker-fill: @shop-icon;
+    marker-file: url('img/amenity/atm.svg');
+}
 
 // Islands and islets
 
@@ -576,37 +665,37 @@
 // ROAD LABELS
 // ==================================================================
 
-#motorway_label[zoom>=11][zoom<=14][reflen<=8] {
-  shield-name: "[ref]";
-  shield-size: 9;
-  shield-face-name: @sans_bold;
-  shield-fill: #fff;
-  shield-file: url(img/shield-motorway-1.png);
-  [type='motorway'] {
-    [reflen=1] { shield-file: url(img/shield-motorway-1.png); }
-    [reflen=2] { shield-file: url(img/shield-motorway-2.png); }
-    [reflen=3] { shield-file: url(img/shield-motorway-3.png); }
-    [reflen=4] { shield-file: url(img/shield-motorway-4.png); }
-    [reflen=5] { shield-file: url(img/shield-motorway-5.png); }
-    [reflen=6] { shield-file: url(img/shield-motorway-6.png); }
-    [reflen=7] { shield-file: url(img/shield-motorway-7.png); }
-    [reflen=8] { shield-file: url(img/shield-motorway-8.png); }
-  }
-  [type='trunk'] {
-    [reflen=1] { shield-file: url(img/shield-trunk-1.png); }
-    [reflen=2] { shield-file: url(img/shield-trunk-2.png); }
-    [reflen=3] { shield-file: url(img/shield-trunk-3.png); }
-    [reflen=4] { shield-file: url(img/shield-trunk-4.png); }
-    [reflen=5] { shield-file: url(img/shield-trunk-5.png); }
-    [reflen=6] { shield-file: url(img/shield-trunk-6.png); }
-    [reflen=7] { shield-file: url(img/shield-trunk-7.png); }
-    [reflen=8] { shield-file: url(img/shield-trunk-8.png); }
-  }
-  [zoom=11] { shield-min-distance: 60; } //50
-  [zoom=12] { shield-min-distance: 80; } //60
-  [zoom=13] { shield-min-distance: 120; } //120
-  [zoom=14] { shield-min-distance: 180; }
-}
+//#motorway_label[zoom>=11][zoom<=14][reflen<=8] {
+//  shield-name: "[ref]";
+//  shield-size: 9;
+//  shield-face-name: @sans_bold;
+//  shield-fill: #fff;
+//  shield-file: url(img/shield-motorway-1.png);
+//  [type='motorway'] {
+//    [reflen=1] { shield-file: url(img/shield-motorway-1.png); }
+//    [reflen=2] { shield-file: url(img/shield-motorway-2.png); }
+//    [reflen=3] { shield-file: url(img/shield-motorway-3.png); }
+//    [reflen=4] { shield-file: url(img/shield-motorway-4.png); }
+//    [reflen=5] { shield-file: url(img/shield-motorway-5.png); }
+//    [reflen=6] { shield-file: url(img/shield-motorway-6.png); }
+//    [reflen=7] { shield-file: url(img/shield-motorway-7.png); }
+//    [reflen=8] { shield-file: url(img/shield-motorway-8.png); }
+//  }
+//  [type='trunk'] {
+//    [reflen=1] { shield-file: url(img/shield-trunk-1.png); }
+//    [reflen=2] { shield-file: url(img/shield-trunk-2.png); }
+//    [reflen=3] { shield-file: url(img/shield-trunk-3.png); }
+//    [reflen=4] { shield-file: url(img/shield-trunk-4.png); }
+//    [reflen=5] { shield-file: url(img/shield-trunk-5.png); }
+//    [reflen=6] { shield-file: url(img/shield-trunk-6.png); }
+//    [reflen=7] { shield-file: url(img/shield-trunk-7.png); }
+//    [reflen=8] { shield-file: url(img/shield-trunk-8.png); }
+//  }
+//  [zoom=11] { shield-min-distance: 60; } //50
+//  [zoom=12] { shield-min-distance: 80; } //60
+//  [zoom=13] { shield-min-distance: 120; } //120
+//  [zoom=14] { shield-min-distance: 180; }
+//}
 
 #motorway_label[type='motorway'][zoom>9],
 #motorway_label[type='trunk'][zoom>9] {
@@ -614,9 +703,13 @@
   text-face-name:@sans_bold;
   text-placement:line;
   text-fill:@road_text;
-  text-halo-fill:@road_halo;
+  
+
+
+
+text-halo-fill:@road_halo;
   text-halo-radius:1;
-  text-min-distance:60;
+  text-min-distance:30;
   text-size:10;
   [zoom=11] { text-min-distance:70; }
   [zoom=12] { text-min-distance:80; }
@@ -624,18 +717,18 @@
 }
 
 #mainroad_label[type='primary'][zoom>12],
-#mainroad_label[type='secondary'][zoom>13],
-#mainroad_label[type='tertiary'][zoom>13] {
+#mainroad_label[type='secondary'][zoom>13] {
   text-name:'[name]';
   text-face-name:@sans;
   text-placement:line;
   text-fill:@road_text;
   text-halo-fill:@road_halo;
   text-halo-radius:1;
-  text-min-distance:60;
+  text-min-distance:30;
   text-size:11;
 }
 
+#mainroad_label[type='tertiary'][zoom>14],
 #minorroad_label[zoom>14] {
   text-name:'[name]';
   text-face-name:@sans;
@@ -644,8 +737,7 @@
   text-fill:@road_text;
   text-halo-fill:@road_halo;
   text-halo-radius:1;
-  text-min-distance:60;
-  text-size:11;
+  text-min-distance:30;
 }
 
 // ==================================================================
