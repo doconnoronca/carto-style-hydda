@@ -62,7 +62,7 @@ All Hydda related data is stored in ``~renderaccount/hydda/`` and this is a hard
 
 ```
 cd ~renderuser/src
-git clone https://github.com/karlwettin/carto-style-hydda.git
+git clone https://github.com/doconnoronca/carto-style-hydda.git
 ```
 
 #### osm2pgsql
@@ -142,7 +142,7 @@ renderaccount@tile-server:/home/renderaccount/hydda/data$ find ./
 ```
 
 #### PostGIS indices
-It is recommended to create the database indices listed in [create_indices.sql](https://raw.githubusercontent.com/karlwettin/carto-style-hydda/master/create_indices.sql).
+It is recommended to create the database indices listed in [create_indices.sql](https://raw.githubusercontent.com/doconnoronca/carto-style-hydda/master/create_indices.sql).
 
 ``psql -d gis -f create_indices.sql``
 
